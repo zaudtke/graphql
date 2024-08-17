@@ -44,3 +44,9 @@ schema.graphqls
 *.userprefs
 *DS_Store
 Thumbs.db
+
+# router binary
+Router/router
+
+# env file
+.env
