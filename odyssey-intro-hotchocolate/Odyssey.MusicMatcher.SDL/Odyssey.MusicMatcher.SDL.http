@@ -1,0 +1,6 @@
+@Odyssey.MusicMatcher.SDL_HostAddress = http://localhost:5149
+
+GET {{Odyssey.MusicMatcher.SDL_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
