@@ -8,8 +8,10 @@ builder.Services.AddHttpClient<SpotifyService>();
 builder
     .Services
     .AddGraphQLServer()
+    .AddApolloFederation()
     .AddQueryType<Query>()
     .AddMutationType<Mutation>()
+    .AddType<Recipe>()
     .RegisterService<SpotifyService>();
 ;
 
@@ -17,9 +19,9 @@ builder
     .Services
     .AddCors(options =>
     {
-        options.AddDefaultPolicy(builder =>
+        options.AddDefaultPolicy(policyBuilder =>
         {
-            builder
+            policyBuilder
                 .WithOrigins("https://studio.apollographql.com")
                 .AllowAnyHeader()
                 .AllowAnyMethod();
@@ -32,4 +34,4 @@ app.UseCors();
 
 app.MapGraphQL();
 
-app.Run();
+app.RunWithGraphQLCommands(args);

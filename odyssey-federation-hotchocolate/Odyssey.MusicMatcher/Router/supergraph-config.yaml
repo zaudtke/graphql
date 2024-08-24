@@ -1,0 +1,9 @@
+federation_version: =2.5.0
+subgraphs:
+  soundtracks: # Subgraph running locally, using introspection to retrieve schema
+    schema:
+      subgraph_url: https://localhost:7260/graphql
+  recipes: # Schema downloaded from GraphOS registry
+    schema:
+      graphref: Music-Matcher-4qjcwu@current # replace with your own graph_ref
+      subgraph: recipes
